@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "fragments::include" />
+<body>
+<div th:replace = "fragments::navigation" />
+<div class="container">
+
+    <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#addExerciseModal">Add Exercise</button>
+    <div id="row">
+        <i class="fa-solid fa-circle-info"></i>Easily add an exercise to begin tracking your workouts using the button above!
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Exercise Name</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Reps</th>
+            <th scope="col">Sets</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <td colspan="6" class="text-center"><strong>October 19, 2022</strong></td>
+        <tr>
+            <th scope="row">Deadlift</th>
+            <td>225</td>
+            <td>Lbs</td>
+            <td>5</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-pencil"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Pull-ups</th>
+            <td>15</td>
+            <td>Lbs</td>
+            <td>10</td>
+            <td>3</td>
+            <td>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-pencil"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Bent-over Rows</th>
+            <td>135</td>
+            <td>Lbs</td>
+            <td>5</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-pencil"></i></button>
+            </td>
+        </tr>
+
+        <td colspan="6" class="text-center"><strong>October 17, 2022</strong></td>
+        <tr>
+            <th scope="row">Bench Press</th>
+            <td>185</td>
+            <td>Lbs</td>
+            <td>5</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-pencil"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Incline Bench Press</th>
+            <td>135</td>
+            <td>Lbs</td>
+            <td>5</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-pencil"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Dips</th>
+            <td>N/A</td>
+            <td>Lbs</td>
+            <td>15</td>
+            <td>3</td>
+            <td>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-outline-dark"><i class="fa fa-pencil"></i></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-outline-dark float-end" data-bs-toggle="modal" data-bs-target="#historyModal"><i class="fas fa-hourglass"></i></button>
+</div>
+<th:block layout:include="fragments/footer"/>
+</body>
+</html>
+
+<!-- History Modal -->
+<div class="modal fade" id="historyModal" tabindex="-1" role="dialog" aria-labelledby="historyModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="historyModalTitle">History</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Exercise Name</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Unit</th>
+                        <th scope="col">Reps</th>
+                        <th scope="col">Sets</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">10/19/22</th>
+                        <td>Bench Press</td>
+                        <td>225</td>
+                        <td>Lbs</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10/19/22</th>
+                        <td>Chest Flies</td>
+                        <td>50</td>
+                        <td>Lbs</td>
+                        <td>15</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10/17/22</th>
+                        <td>Squat</td>
+                        <td>225</td>
+                        <td>Lbs</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10/15/22</th>
+                        <td>Deadlift</td>
+                        <td>225</td>
+                        <td>Lbs</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10/17/22</th>
+                        <td>Side Delt Flies</td>
+                        <td>25</td>
+                        <td>Lbs</td>
+                        <td>15</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10/15/22</th>
+                        <td>Run</td>
+                        <td>5</td>
+                        <td>Miles</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalTitle">DANGER</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>DANGER: YOU CANNOT UNDO THIS ACTION, ARE YOU SURE YOU WANT TO DELETE THIS EXERCISE?</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Getting Started Modal -->
+<div class="modal fade" id="gettingStartedModal" tabindex="-1" role="dialog" aria-labelledby="gettingStartedModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gettingStartedModalTitle">Getting Started</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to the Exercise App! This page will give you a basic overview of how to use the application.
+                To get started, all you have to do is add an exercise! You can do so by pressing the large green button
+                that says "Add Exercise" on the main page to add your first exercise. You will need to fill out some basic
+                information, including the date that you performed the exercise, the name of the exercise, the weight, the
+                number of repetitions performed, and the number of sets performed. The add exercise window will have tooltips
+                available to explain further what each of these mean, including examples! Just hover over the <i class="fa-solid fa-circle-info"></i>
+                icon for an explanation.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Exercise Modal -->
+<div class="modal fade" id="addExerciseModal" tabindex="-1" aria-labelledby="addExerciseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addExerciseModalLabel">Add Exercise</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="exercise-date" class="col-form-label">Date:</label>
+                        <input type="date" class="form-control" id="exercise-date" placeholder="Enter Date">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exercise-name" class="col-form-label">Exercise Name:</label>
+                        <input type="text" class="form-control" id="exercise-name" placeholder="Enter Exercise Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exercise-weight" class="col-form-label">Weight:</label>
+                        <input type="text" class="form-control" id="exercise-weight" placeholder="Enter Weight"></input>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="exercise-unit">Unit</label>
+                        </div>
+                        <select class="form-select" id="exercise-unit">
+                            <option selected>Choose...</option>
+                            <option value="1">Lbs</option>
+                            <option value="2">Kgs</option>
+                            <option value="3">Miles</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exercise-rep" class="col-form-label"><i class="fa-solid fa-circle-info" data-toggle="tooltip" title="The number of times you performed the exercise in a row"></i> Reps:</label>
+                        <input type="number" class="form-control" id="exercise-rep" placeholder="Enter Reps"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exercise-set" class="col-form-label"><i class="fa-solid fa-circle-info" data-toggle="tooltip" title="The number of times you performed several repetitions of the exercise in a row"></i> Sets:</label>
+                        <input type="number" class="form-control" id="exercise-set" placeholder="Enter Sets"></input>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Add Exercise</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+</script>
